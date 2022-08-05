@@ -1,0 +1,9 @@
+image: registry.gitlab.com/xsmeets/latex-docker-img:latest
+
+compile:
+  stage: build
+  script:
+    - pdflatex main.tex
+  artifacts:
+    paths:
+      - '*.pdf'

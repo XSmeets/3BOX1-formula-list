@@ -1,0 +1,188 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{hyperref}
+
+\newtheorem*{remark}{Remark}
+\newtheorem*{idea}{Idea}
+
+\title{3BOX1 - List of formulas}
+\author{Xander Smeets}
+\date{December 2019}
+
+\begin{document}
+\maketitle
+
+\section{Wave equation}
+A function describes a travelling wave if it adheres to the wave equation.
+It will do so if the function is a function of $x+vt$ or $x-vt$.
+A common way to write a wave is using $$\psi{}=A e^{i\left(k\cdot r + \omega t + \phi\right)}$$
+
+$$B_0=\frac{E_0}{c}$$
+\begin{idea}
+An easy way to remember the order of the symbols in this formula is by considering the fact that the electric field $E_0$ is always much larger than the magnetic field $B_0$.
+\end{idea}
+
+\noindent{}Radiation pressure for $100\%$ absorption: $P=\frac{I}{c}$.\newline
+Radiation pressure for $100\%$ reflection: $P=\frac{2I}{c}$.
+
+$$\epsilon_0=\num{8.854e-12}\;  \si{\farad\per\metre}$$
+
+\section{Reflection and Refraction}
+
+Critical angle (for total internal reflection): $\sin(\theta{}_c)=\frac{n_t}{n_i}$\newline
+\begin{remark}
+(This is similar to Brewster's angle, but with a sine instead of a tangent.)
+\end{remark}
+
+\subsection{Fresnel equations}
+The Fresnel equations give a relation between the reflectivity $R$, the indices of refraction, the angle of incidence and the angle of transmission.
+\begin{remark}
+Watch out!
+The equations given on the formula sheet give the reflection ratio for the \emph{electric field} $r$, while the often-needed reflectivity $R$ is the ratio between the incident and reflected \emph{power}.
+From the relation between electric field and power, it then follows that $R=r^2$, hence the relations on the sheet have to be squared (most of the time).
+\end{remark}
+\begin{remark}
+For the transmissivity $T$, it works differently once again.
+$$T=\frac{P_t}{P_i}=\frac{I_t\cos(\theta_t)}{I_i\cos(\theta_i)}=\frac{n_t\cos(\theta_t)}{n_i\cos(\theta_i)}t^2$$
+\end{remark}
+
+$$\omega=2\pi f=\frac{2\pi c}{\lambda}$$
+
+\noindent
+For reflectivity:
+\begin{equation}
+    R=\frac{P_r}{P_i}=\frac{I_r}{I_i}=\frac{E_{0r}^2}{E_{0i}^2}=r^2
+\end{equation}
+For transmissivity:
+\begin{equation}
+    T=\frac{P_t}{P_i}=\frac{I_t \cos{\theta_t}}{I_i \cos{\theta_i}}=\left(\frac{n_t\cos{\theta_t}}{n_i\cos{\theta_i}}\right)t^2=n\left(\frac{\cos{\theta_t}}{\cos{\theta_i}}\right)t^2
+\end{equation}
+
+\section{Geometric optics 1}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c}
+         convex & bol \\ \hline
+         concave & hol
+    \end{tabular}
+    \caption{Convex and concave}
+    \label{tab:my_label}
+\end{table}
+% This is a bit hard to remember; think of the word convex, which contains the letter x. The letter x looks similar to a concave lens (so it is just the other way around :) )
+
+Construction rays for a concave lens:
+\begin{enumerate}
+    \item A ray which goes straight (parallel to the optical axis) towards the lens and then 'reflects' to go through the focal point.
+    \item A ray through the middle of the lens.
+\end{enumerate}
+
+\section{Geometric optics 2}
+Concave mirror: light is 'in the circle'; $R>0$\newline
+Convex mirror: light is outside of the circle (think of the word '\emph{exit}'); $R<0$
+
+\noindent{}Magnification in general: $M=-\frac{s_i}{s_o}$
+\begin{remark}
+For the magnification: watch out for the minus sign!
+\end{remark}
+
+\noindent{}Maximum angular magnification of a magnifier, as well as the magnification of the ocular of a microscope:
+$M_A=M_e=\frac{N.P.}{f}$, where $N.P.=254$ \si{\milli\metre}, the near point distance of the eye.
+
+\subsection{System matrices}
+
+\noindent{}For a displacement $d$:
+$
+\begin{bmatrix}
+1 & d\\
+0 & 1
+\end{bmatrix}
+$
+
+\noindent{}For a thin lens with focal length $f$:
+$
+\begin{bmatrix}
+1 & 0\\
+-\frac{1}{f} & 1
+\end{bmatrix}
+$
+
+\noindent{}For refraction on a spherical surface with curvature $R$:
+$
+\begin{bmatrix}
+1 & 0\\
+-\frac{n_t-n_i}{n_t}\frac{1}{R} & \frac{n_i}{n_t}
+\end{bmatrix}
+$
+
+\noindent{}For reflection on a mirror with curvature $R$:
+$
+\begin{bmatrix}
+1 & 0\\
+\frac{2}{R} & 1
+\end{bmatrix}
+$
+
+\begin{remark}
+For a planar surface, note that the radius of curvature is infinite; $R=\infty$
+\end{remark}
+
+\section{Superposition and Polarization}
+$$v_p=\frac{\omega}{k}=\frac{c}{n}=f\lambda$$
+$$k=\frac{2\pi}{\lambda}$$
+
+\noindent{}When 'completely describing' the state of polarization of a wave, one can often follow these steps:
+\begin{enumerate}
+\item Calculate and simplify $E_x$ and $E_y$, usually at $z=0$ (so the $kz$-term drops out).
+\item Determine the phase difference between $E_x$ and $E_y$.
+\item Determine whether the wave is polarised
+\begin{itemize}
+\item linearly (at $-\pi$, $0$ or $\pi$ radians)
+\item circularly (right-cicular at $-\frac{\pi}{2}$, left-circular at $\frac{\pi}{2}$ radians)
+\item elliptically (right-elliptically for negative phase differences, left-elliptically for positive phase differences)
+\end{itemize}
+\end{enumerate}
+\section{Polarization}
+\noindent{}In a Michelson interferometer, as the two beams interfere constructively whenever the optical paths differ an integer number of wavelengths: $$OPD=2\Delta L = m \lambda_0$$
+where $m$ is the number of fringe pairs observed when moving the mirror over a distance $\Delta L$.
+\newline\newline
+Given a Jones vector $J$, we know that
+\begin{equation}
+    I=\frac{1}{2} c \epsilon_0 \left|J\right|^2
+\end{equation}
+\iffalse
+\noindent
+A wave plate is defined to change the polarization state of a wave passing through it.
+This means that the definition of a half-wave plate, for example, is that it changes the polarization angle of the light along the slow axis by $\pi$.
+The definition \textbf{does not} state that a delay of $\frac{1}{2}\lambda$ is induced along the slow axis (although this is usually the case (especially, the plate does not induce a delay of $\frac{1}{2}\lambda_0$).
+\fi
+\section{Interference}
+\begin{idea}
+The reflection phase change is determined according to the following rule:
+"When the index of refraction of the incident medium is less than that of the transmitted medium, the reflected beam is phase-shifted by $\pi$ radians." (Bennett, page 207)
+\end{idea}
+\noindent{}A somewhat shorter way of remembering this idea:
+$$n_i<n_t\implies \Delta\phi_{ref} \; + \! = \; \pi$$
+\begin{idea}
+Maybe even: the ILT (government authority) wants change (incident less than transmitted gives change of the angle).
+Then the trick is $I$ Less than $T$.
+\end{idea}
+\section{Diffraction}
+\subsection{Resolving power}
+Resolving power is the ability of an imaging device to separate (to see as distinct) points of an object that are located at a small angular distance or it is the power of an optical instrument to separate far away objects, that are close together, into individual images.\footnote{Wikipedia: \url{https://en.wikipedia.org/wiki/Angular_resolution}}
+$$\mathcal{R}=\frac{\lambda}{\Delta\lambda}=Nm$$
+\subsection{Rayleigh criterion}
+The Rayleigh criterion for barely resolving two objects that are point sources of light, such as stars seen through a telescope, is that the center of the Airy disk for the first object occurs at the first minimum of the Airy disk of the second.\footnote{Wikipedia: \url{https://en.wikipedia.org/wiki/Airy_disk}}
+$$\theta=1.22 \frac{\lambda}{d}$$
+\subsection{Missing orders}
+A missing order occurs when $\frac{d}{b}\in{\mathbb{N}}$.
+If this is the case, then every $\frac{d}{b}^{\text{th}}$ order will be missing.
+\iffalse
+The angle for which this occurs can be calculated by using $$\gamma_{n\cdot\frac{d}{b}}=\left(n\cdot\frac{d}{b}\right)\pi=\frac{1}{2}k d \sin\left({\theta_{n\cdot\frac{d}{b}}}\right)=\frac{\pi}{\lambda_0}n d \sin\left(\theta_{n\cdot\frac{d}{b}}\right)$$
+\fi
+\end{document}
