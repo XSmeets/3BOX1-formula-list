@@ -1,4 +1,4 @@
-image: registry.gitlab.com/xsmeets/latex-docker-img:latest
+image: ghcr.io/smeetsee/latex-docker:latest
 
 compile:
   stage: build
