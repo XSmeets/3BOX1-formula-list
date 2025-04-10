@@ -1,0 +1,15 @@
+name: LaTeX document
+on:
+  release:
+    types: [created]
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+      - name: Build and release LaTeX document
+        uses: smeetsee/gh-action-latex-build-and-release@v3
+        with:
+          tex-entry-point: 'main'
+          pdf-name: '3BOX1-formula-list'
