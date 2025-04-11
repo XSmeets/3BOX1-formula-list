@@ -9,7 +9,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v3
       - name: Build and release LaTeX document
-        uses: smeetsee/gh-action-latex-build-and-release@v3
+        uses: smeetsee/gh-action-latex-build-and-release@vdebug
         with:
           tex-entry-point: 'main'
           pdf-name: '3BOX1-formula-list'
